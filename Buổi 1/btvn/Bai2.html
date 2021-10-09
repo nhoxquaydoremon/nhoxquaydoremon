@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bài 2</title>
+</head>
+
+<body>
+    <script>
+        const str = "shopper";
+        const nearest = (arr = [], el) => arr.reduce((acc, val) => Math.min(acc,
+            Math.abs(val - el)), Infinity);
+        const vowelNearestDistance = (str = '') => {
+            const s = str.toLowerCase();
+            const vowelIndex = [];
+            for (let i = 0; i < s.length; i++) {
+                if (s[i] === 'a' || s[i] === 'e' || s[i] === 'i' || s[i] === 'o' ||
+                    s[i] === 'u') {
+                    vowelIndex.push(i);
+                };
+            };
+            return s.split('').map((el, ind) => nearest(vowelIndex, ind));
+        };
+        console.log(vowelNearestDistance(str));
+    </script>
+</body>`1```
+</html>
